@@ -6,3 +6,10 @@
     background-color:orange;
     min-height: 100vh;
 }
+.shop-items{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    justify-items: center;
+    padding: 3rem;
+}
