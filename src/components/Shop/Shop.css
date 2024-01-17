@@ -3,11 +3,7 @@
     grid-template-columns: 4fr 1fr;
     
 }
-.orders{
-    background-color:rgba(255, 153, 0, 0.30);
-    min-height: 100vh;
-    padding: 16px;
-}
+
 .shop-items{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -17,25 +13,4 @@
     padding: 3rem;
     margin-top: 1rem;
 
-}
-.summery-btn{
-    width: 100%;
-    color: #fff;
-    margin-top:10px;
-    padding: 5px;
-    border-radius: 4px;
-    height: 40px;
-
-}
-.clear-btn{
-    background: #FF3030;
-}
-.review-btn{
-    background: #F90;
-}
-.order-summary-details{
-    margin-left: 10px;
-}
-.order-summ-name{
-    text-align: center;
 }
