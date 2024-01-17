@@ -14,10 +14,12 @@ const Orders = (prop) => {
 let totalPrice=0;
 let totalShipping=0;
 let GrandTotal=0;
+let totalQuantity=0;
     for(const product of cart) {
-        totalPrice+=product.price;
-          totalShipping+=product.shipping;
-         
+        product.quantity=product.quantity||1;
+        totalPrice+=product.price*product.quantity;
+        totalShipping+=product.shipping;
+        totalQuantity+=product.quantity; 
     }
     let tax=(totalPrice*7)/100;
     GrandTotal+=(totalPrice+totalShipping+tax);
@@ -25,7 +27,7 @@ let GrandTotal=0;
         <div className="orders">
            <h4 className="order-summ-name">Order Summary    <FontAwesomeIcon icon={faClipboardList}/></h4>
                     <div className="order-summary-details">
-                    <p>Selected Items: {cart.length}</p>          
+                    <p>Selected Items: {totalQuantity}</p>          
                     <p>Total Price: ${totalPrice}</p>          
                     <p>Total Shipping Charge: ${totalShipping}</p>          
                     <p>Tax: ${tax.toFixed(2)}</p>          
