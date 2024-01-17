@@ -1,0 +1,18 @@
+.header{
+    background-color:#1C2B35;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-items a{
+  color:#FFFFFF;
+  text-decoration: none;
+  margin-left: 32px;
+}
+.header img{
+    margin-left:100px;
+}
+.nav-items{
+    margin-right: 100px;
+}
