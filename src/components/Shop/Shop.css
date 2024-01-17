@@ -1,0 +1,8 @@
+.shop{
+    display:grid;
+    grid-template-columns: 4fr 1fr;
+}
+.orders{
+    background-color:orange;
+    min-height: 100vh;
+}
