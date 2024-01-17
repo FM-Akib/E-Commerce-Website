@@ -6,6 +6,7 @@ import Product from '../Product/Product';
 
 
 import Orders from '../Orders/Orders';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 
 const Shop = () => {
     const [products,setProducts]=useState([]);
@@ -15,10 +16,26 @@ const Shop = () => {
         .then(response => response.json())
         .then(data=>setProducts(data))
     },[])
+
+    useEffect(() => {
+        const storedShoppingCart=getShoppingCart();
+        const SavedCart=[]
+
+        for(const id in storedShoppingCart){
+            const savedProduct=products.find(product => product.id===id);
+            if(savedProduct){
+                const previousCartQuantity=storedShoppingCart[id];
+                savedProduct.quantity=previousCartQuantity;
+                SavedCart.push(savedProduct);
+            }   
+        }
+        setCart(SavedCart)
+    },[products])
     
-    const AddtoCart=(pro)=>{
-         const newCart =[...cart,pro];
+    const AddtoCart=(product)=>{
+         const newCart =[...cart,product];
          setCart(newCart);
+         addToDb(product.id)
     }
 
     return (
