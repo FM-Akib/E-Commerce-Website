@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useState } from 'react';
 import './Shop.css';
 import { useEffect } from 'react';
@@ -20,7 +20,6 @@ const Shop = () => {
          const newCart =[...cart,pro];
          setCart(newCart);
     }
-
 
     return (
         <div className="shop">
