@@ -24,7 +24,17 @@ const Shop = () => {
 
             </div>
             <div className="orders">
-right
+                
+                    <h4 className="order-summ-name">Order Summary</h4>
+                    <div className="order-summary-details">
+                    <p>Selected Items: 6</p>          
+                    <p>Total Price: $1140</p>          
+                    <p>Total Shipping Charge: $5</p>          
+                    <p>Tax: $114</p>          
+                    <p>Grand Total: $1559</p>          
+                    </div>
+                    <button className='summery-btn clear-btn'>Clear Cart</button>
+                    <button className='summery-btn review-btn'>Review Order</button>
             </div>
         </div>
     );
