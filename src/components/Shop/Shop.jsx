@@ -6,7 +6,7 @@ import Product from '../Product/Product';
 
 
 import Orders from '../Orders/Orders';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 
 const Shop = () => {
     const [products,setProducts]=useState([]);
@@ -39,6 +39,11 @@ const Shop = () => {
          addToDb(product.id)
     }
 
+    const handleClearCart=() => {
+        setCart([]);
+        deleteShoppingCart();
+    }
+
     return (
         <div className="shop">
             <div className="shop-items">
@@ -52,8 +57,10 @@ const Shop = () => {
 
             </div>
             <div >
-               <Orders cart={cart}></Orders> 
-                    
+               <Orders 
+               cart={cart}
+               handleClearCart={handleClearCart}
+               ></Orders> 
             </div>
         </div>
     );

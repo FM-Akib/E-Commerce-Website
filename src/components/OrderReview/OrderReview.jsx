@@ -5,7 +5,12 @@ import Orders from "../Orders/Orders";
 import Reviewitem from "../Reviewitem/Reviewitem";
 import './OrderReview.css';
 import { useState } from "react";
-import { removeFromDb } from "../../utilities/fakedb";
+import { deleteShoppingCart, removeFromDb } from "../../utilities/fakedb";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+
+
 const OrderReview = () => {
     const savedCart = useLoaderData();
     const [cart,setCart]=useState(savedCart);
@@ -15,7 +20,10 @@ const DeleteFromSavedCart=(id) => {
     setCart(remaining);
     removeFromDb(id);
 }
-
+const handleClearCart=() => {
+    setCart([]);
+    deleteShoppingCart();
+}
 
     return (
         <div className="shop">
@@ -31,7 +39,11 @@ const DeleteFromSavedCart=(id) => {
             </div>
 
             <div >
-               <Orders cart={cart}></Orders>    
+               <Orders 
+               cart={cart}
+               handleClearCart={handleClearCart}
+               >  </Orders>    
+               {/* <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button> */}
             </div>
         </div>
     );

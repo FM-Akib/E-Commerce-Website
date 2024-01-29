@@ -3,14 +3,14 @@ import './Orders.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+// import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 
 
 
-const Orders = (prop) => {
-    const {cart}=prop;
+const Orders = ({cart,handleClearCart}) => {
+    // const {cart}=prop;
 
 let totalPrice=0;
 let totalShipping=0;
@@ -34,8 +34,8 @@ let totalQuantity=0;
                     <p>Tax: ${tax.toFixed(2)}</p>          
                     <h4>Grand Total: ${GrandTotal.toFixed(2)}</h4>          
                     </div>
-                    <button  className='summery-btn clear-btn'>Clear Cart   <FontAwesomeIcon icon={faTrash} /></button>
-                    <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button> 
+                    <button onClick={handleClearCart}  className='summery-btn clear-btn'>Clear Cart   <FontAwesomeIcon icon={faTrash} /></button>
+                    {/* <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button>  */}
         </div>
     );
 };
