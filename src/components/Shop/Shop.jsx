@@ -7,6 +7,9 @@ import Product from '../Product/Product';
 
 import Orders from '../Orders/Orders';
 import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
     const [products,setProducts]=useState([]);
@@ -60,7 +63,11 @@ const Shop = () => {
                <Orders 
                cart={cart}
                handleClearCart={handleClearCart}
-               ></Orders> 
+               >
+                <Link to='/orders'>
+                <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button>
+                </Link>
+                </Orders> 
             </div>
         </div>
     );

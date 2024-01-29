@@ -9,7 +9,7 @@ import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Orders = ({cart,handleClearCart}) => {
+const Orders = ({cart,handleClearCart,children}) => {
     // const {cart}=prop;
 
 let totalPrice=0;
@@ -35,7 +35,8 @@ let totalQuantity=0;
                     <h4>Grand Total: ${GrandTotal.toFixed(2)}</h4>          
                     </div>
                     <button onClick={handleClearCart}  className='summery-btn clear-btn'>Clear Cart   <FontAwesomeIcon icon={faTrash} /></button>
-                    {/* <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button>  */}
+                
+                    {children}
         </div>
     );
 };

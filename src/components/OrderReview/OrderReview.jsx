@@ -1,6 +1,6 @@
  import React from 'react';
 
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Orders from "../Orders/Orders";
 import Reviewitem from "../Reviewitem/Reviewitem";
 import './OrderReview.css';
@@ -42,8 +42,12 @@ const handleClearCart=() => {
                <Orders 
                cart={cart}
                handleClearCart={handleClearCart}
-               >  </Orders>    
-               {/* <button className='summery-btn review-btn'>Review Order  <FontAwesomeIcon icon={faArrowRight}/></button> */}
+               > 
+               <Link to='/checkout'>
+               <button className='summery-btn review-btn'>Proceed Checkout <FontAwesomeIcon icon={faArrowRight}/></button>
+               </Link>
+                </Orders>    
+               
             </div>
         </div>
     );
