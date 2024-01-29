@@ -1,12 +1,13 @@
 import { getShoppingCart } from "../utilities/fakedb";
 
-const cartProductLoader=async ()=>{
+const cartProductLoader = async ()=>{
 
 const loadedProducts= await fetch("products.json");
 const products = await loadedProducts.json();
 
 const savedCart =[];
 const storedCart=getShoppingCart();
+
 for(const id in storedCart ){
        const addedProduct=products.find(pd=>pd.id === id);
        if(addedProduct){

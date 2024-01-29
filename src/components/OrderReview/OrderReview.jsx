@@ -2,21 +2,28 @@
 
 import { useLoaderData } from "react-router-dom";
 import Orders from "../Orders/Orders";
-
+import Reviewitem from "../Reviewitem/Reviewitem";
+import './OrderReview.css';
 const OrderReview = () => {
     const cart = useLoaderData();
-    console.log(cart);
+    
+
+
+
     return (
         <div className="shop">
-            <div className="shop-items">
+            <div className="Review-container">
               {
-               
+                cart.map(cartItem=><Reviewitem
+                   key={cartItem.id}
+                   cart={cart}
+                ></Reviewitem>)
               }
 
             </div>
+
             <div >
-               <Orders cart={cart}></Orders> 
-                    
+               <Orders cart={cart}></Orders>    
             </div>
         </div>
     );
