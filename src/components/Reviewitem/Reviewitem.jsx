@@ -5,9 +5,9 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const Reviewitem = ({cart}) => {
+const Reviewitem = ({cart,DeleteFromSavedCart}) => {
     const {id,name,img,quantity,price,shipping}=cart;
-    console.log(cart)
+   
     return (
         <div className="review-item">
             <img src={img} alt=""/>
@@ -19,7 +19,7 @@ const Reviewitem = ({cart}) => {
                 <p className='product-details-mini'>Shipping Cost: <span className="orrange">${shipping}</span></p>
                
             </div>
-            <button className='btn-delete'><FontAwesomeIcon className='delete-icn' icon={faTrashAlt} /></button>
+            <button onClick={() =>DeleteFromSavedCart(id)} className='btn-delete'><FontAwesomeIcon className='delete-icn' icon={faTrashAlt} /></button>
         </div>
     );
 };
