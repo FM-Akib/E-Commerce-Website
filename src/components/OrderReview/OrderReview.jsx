@@ -16,7 +16,7 @@ const OrderReview = () => {
               {
                 cart.map(cartItem=><Reviewitem
                    key={cartItem.id}
-                   cart={cart}
+                   cart={cartItem}
                 ></Reviewitem>)
               }
 
